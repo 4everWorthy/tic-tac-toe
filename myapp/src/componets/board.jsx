@@ -3,17 +3,17 @@ import Square from "./square";
 import calculateWinner from "../calculateWinner";
 
 export default function Board({ xIsNext, squares, onPlay }) {
-  function handleClick(i) {
-    if (calculateWinner(squares) || squares[i]) {
+  function handleClick(i) { // 'i' represents the index of the square that gets clicked
+    if (calculateWinner(squares) || squares[i]) { // checks 'if' there is already a winner or if the square at index 'i' is already filled
       return;
     }
-    const nextSquares = squares.slice();
-    if (xIsNext) {
-      nextSquares[i] = 'X';
+    const nextSquares = squares.slice(); // creates a copy of the squares array called nextSquares.
+    if (xIsNext) { //checks if it's X's turn (xIsNext).
+      nextSquares[i] = 'X';  // if true, is set to 'X'
     } else {
-      nextSquares[i] = 'O';
+      nextSquares[i] = 'O';  // if false, is set to 'X'
     }
-    onPlay(nextSquares);
+    onPlay(nextSquares); // calls the onPlay function on line 5
   }
 
   const winner = calculateWinner(squares);
