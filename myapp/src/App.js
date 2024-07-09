@@ -1,15 +1,11 @@
 import './App.css';
-
-import Board from './componets/board';
-import Square from './componets/square';
+import Game from './componets/game';
+import './style/styles.css';
 
 function App() {
   return (
-   <>
-    <Board>
-    <Square></Square>
-    </Board>
-    
+   <> 
+    <Game></Game>
    </>
   );
 }
